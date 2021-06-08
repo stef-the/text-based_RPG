@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Warrior",
+        "id": "warrior",
+        "upgrades": ["knight", "samurai"]
+    },
+    {
+        "name": "Knight",
+        "id": "knight",
+        "upgrades": ["paladin"]
+    },
+    {
+        "name": "Samurai",
+        "id": "samurai",
+        "upgrades": ["paladin"]
+    },
+    {
+        "name": "Paladin",
+        "id": "paladin",
+        "upgrades": []
+    },
+
+    {
+        "name": "Ranger",
+        "id": "ranger",
+        "upgrades": ["hunter"]
+    },
+    {
+        "name": "Hunter",
+        "id": "hunter",
+        "upgrades": ["sharpshooter"]
+    },
+    {
+        "name": "Sharpshooter",
+        "id": "sharpshooter",
+        "upgrades": []
+    }
+]
