@@ -1,10 +1,10 @@
 # Text Based Game
 
 ### Standard  Classes ###
-# Warrior               #
-# Ranger                #
-# Scout                 #
-# Wizard                #
+# Warrior               #   - Melee/Damage
+# Ranger                #   - Bows/Range
+# Scout                 #   - Knives/Speed
+# Wizard                #   - Spells/Support
 #### Special Classes ####
 # Knight                #   - Warrior Derivative
 # Paladin               #   - Knight/Samurai Derivative
@@ -142,14 +142,20 @@ debug.info() # Display debugging information
 game.startup.login() # Get save code/create username + class
 
 class_tree = jsonloads(open('classes.json', 'r').read())
+print('\n')
 print(class_tree)
 
-num = 3
-a = 'Warrior ' + text.box.end.right
-if num > 1:
-    a += text.box.t.down
-a += text.box.end.left + ' Knight  ' + text.box.end.right + text.box.t.down + text.box.end.left + 'Paladin' + '\n'
+b = text.box
 
-# a += '        ' + ' ' + text.box.t.right + text.box.end.left + 'Paladin' + '\n'
-a += '        ' + ' ' + text.box.angle.right_up + text.box.end.left + ' Samurai ' + text.box.end.right + text.box.angle.left_up
-print(a)
+for i in class_tree:
+    if i['upgrades'] != []:
+        if len(i['upgrades']) > 1:
+
+            for j in class_tree:
+                if j['id'] == i['upgrades'][0]:
+                    aa = j
+            
+            print(i['name'] + b.end.right + b.t.down + b.end.left + aa['name'])
+
+    else:
+        print(i['name'])
