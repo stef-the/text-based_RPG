@@ -156,6 +156,7 @@ for i in class_tree:
                     aa = j
             
             print(i['name'] + b.end.right + b.t.down + b.end.left + aa['name'])
+            
 
     else:
         print(i['name'])
